@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contact Trajectory Prompting: in-context transfer of contact-rich behaviors from a single demonstration.">
+  <meta name="theme-color" content="#ffffff">
+  <title>Contact Trajectory Prompting</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="assets/site-academic.css">
+  <script defer src="assets/site-content.js"></script>
+  <script defer src="assets/site.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="CTP home">CTP</a>
+    <nav aria-label="Sections">
+      <a href="#control">Prompt control</a><a href="#method">Method</a><a href="#experiments">Transfer</a><a href="#comparison">Comparison</a><a href="#resources" id="citation-nav">Citation</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-inner wrap">
+        <div class="hero-copy">
+          <h1 id="hero-title">Contact Trajectory Prompting</h1>
+          <p class="hero-subtitle">In-Context Transfer of Contact-Rich Behaviors from a Single Demonstration</p>
+          <div class="authors" id="authors"></div>
+          <div class="resource-links" id="hero-links"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="overview section wrap" id="overview" aria-labelledby="overview-title">
+      <h2 class="visually-hidden" id="overview-title">Overview video</h2>
+      <div class="overview-player">
+        <video controls preload="metadata" playsinline poster="assets/images/hero.webp" aria-label="CTP overview video">
+          <source src="assets/videos/overview.mp4" type="video/mp4">
+          Your browser cannot play this video.
+        </video>
+      </div>
+      <p class="overview-takeaway">A single demonstration specifies the desired contact behavior, including interaction intensity. CTP uses online feedback to execute it on an object unseen during training, without retraining.</p>
+    </section>
+
+    <section class="control section wrap" id="control" aria-labelledby="control-title">
+      <div class="section-head"><div><h2 id="control-title">Prompt control</h2></div></div>
+      <div class="tabbar" role="tablist" aria-label="Prompt control" id="control-tabs"></div>
+      <div id="control-stage" role="tabpanel" tabindex="0"></div>
+    </section>
+
+    <section class="method section wrap" id="method" aria-labelledby="method-title">
+      <div class="section-head"><div><h2 id="method-title">Method</h2></div></div>
+      <figure class="method-figure" id="method-figure"><img src="assets/images/method.webp" alt="CTP method: prompt encoder, policy training, and one-shot prompted execution" width="2552" height="1248"></figure>
+      <div class="method-copy">
+        <p><strong>Prompt encoding.</strong> The reference is sampled across time and force changes. An encoder compresses end-effector motion and both fingers’ force measurements into ordered tokens, pretrained by reconstructing the sampled signals.</p>
+        <p><strong>Policy training.</strong> Current images, robot state, and force measurements attend to the prompt as the policy predicts short action chunks.</p>
+        <p><strong>One-shot execution.</strong> A new reference is encoded once. The robot then acts using live observations, with the prompt encoder and policy fixed.</p>
+      </div>
+    </section>
+
+    <section class="experiments section soft" id="experiments" aria-labelledby="experiments-title">
+      <div class="wrap"><div class="section-head"><div><h2 id="experiments-title">One-shot transfer</h2></div></div>
+      <p class="section-lead">We move each unseen object after recording the guided reference, then run CTP autonomously.</p>
+      <div class="tabbar" role="tablist" aria-label="Task family" id="task-tabs"></div>
+      <div id="transfer-stage"></div>
+      <div class="result-strip"><span class="result-number">78.7%</span><span>Overall success on the paper’s unseen-object evaluation</span></div>
+      </div>
+    </section>
+
+    <section class="comparison section soft" id="comparison" aria-labelledby="comparison-title">
+      <div class="wrap"><div class="section-head"><div><h2 id="comparison-title">Baseline comparison</h2></div></div><div id="baseline-stage"></div></div>
+    </section>
+
+    <section class="more section wrap" id="more" aria-labelledby="more-title">
+      <div class="section-head"><div><h2 id="more-title">Other wiping tools</h2></div></div>
+      <p class="section-lead">For wiping, the policy was trained with an eraser. Sponge and cloth executions each use a reference with the same tool.</p>
+      <div id="tool-stage"></div>
+    </section>
+    <section class="process section wrap" id="process" aria-labelledby="process-title">
+      <div class="flow">
+        <div><h2 id="process-title">Full process</h2><p>Recording a reference and running the policy in one continuous view.</p></div>
+        <div id="flow-media"></div>
+      </div>
+    </section>
+
+    <section class="resources section" id="resources" aria-labelledby="resources-title"><div class="wrap resources-grid"><div><h2 id="resources-title">Resources</h2><div class="resource-links" id="footer-links"></div></div><div class="citation" id="citation-block"><div class="citation-head"><h3>Citation</h3><button id="copy-bibtex" type="button" hidden>Copy BibTeX</button></div><pre id="bibtex"></pre></div></div></section>
+  </main>
+  <footer class="footer"><div class="wrap"><span>Contact Trajectory Prompting</span><a href="#top">Back to top ↑</a></div></footer>
+</body>
+</html>
